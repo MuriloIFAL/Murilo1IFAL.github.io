@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT02 — Cadastro de Usuário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            background-color: #f0f2f5;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        h2 { text-align: center; color: #333; margin-top: 0; }
+
+        .campo-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label { font-weight: bold; font-size: 0.9rem; color: #444; }
+
+        input[type="text"], 
+        input[type="email"], 
+        input[type="password"], 
+        input[type="date"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        legend { font-weight: bold; padding: 0 10px; color: #444; }
+
+        .radio-grupo, .check-grupo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: normal;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+        .botoes {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        button[type="submit"] { background-color: #007bff; color: white; }
+        button[type="reset"] { background-color: #6c757d; color: white; }
+        
+        button:hover { opacity: 0.85; transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+
+    <form action="https://httpbin.org/post" method="post">
+        <h2>Cadastro de Usuário</h2>
+
+        <div class="campo-grupo">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome aqui" required minlength="3">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+        </div>
+
+        <div class="campo-grupo">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" required minlength="8">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="date" id="nascimento" name="nascimento" required>
+        </div>
+
+        <fieldset>
+            <legend>Gênero</legend>
+            <label class="radio-grupo"><input type="radio" name="genero" value="masculino"> Masculino</label>
+            <label class="radio-grupo"><input type="radio" name="genero" value="feminino"> Feminino</label>
+            <label class="radio-grupo"><input type="radio" name="genero" value="outro"> Outro</label>
+            <label class="radio-grupo"><input type="radio" name="genero" value="prefiro_nao_informar"> Prefiro não informar</label>
+        </fieldset>
+
+        <label class="check-grupo">
+            <input type="checkbox" name="aceite" value="sim" required>
+            Aceito os termos de uso
+        </label>
+
+        <div class="botoes">
+            <button type="submit">Criar conta</button>
+            <button type="reset">Limpar campos</button>
+        </div>
+    </form>
+
+</body>
+</html>
