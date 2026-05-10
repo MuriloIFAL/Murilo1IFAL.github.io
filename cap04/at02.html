@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 2 — Tabela Semântica</title>
+  <style>
+    body {
+      font-family:"Comic Sans MS", "Comic Sans", cursive;
+      padding: 40px;
+      background-color: #f4f7f6;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    caption {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    th, td {
+      border: 1px solid #bdc3c7;
+      padding: 12px;
+      text-align: center;
+    }
+
+    thead th {
+      background-color: #2980b9;
+      color: white;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    tbody th {
+      background-color: #f9f9f9;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    tfoot {
+      background-color: #ecf0f1;
+      font-weight: bold;
+    }
+
+    .media-final {
+      background-color: #e8f4fd;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <caption>Notas Bimestrais — Turma Sistemas de Informação, 2026</caption>
+
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Aluno</th>
+        <th scope="colgroup" colspan="4">Bimestres</th>
+        <th scope="col" rowspan="2">Média Final</th>
+      </tr>
+      <tr>
+        <th scope="col">1º Bim</th>
+        <th scope="col">2º Bim</th>
+        <th scope="col">3º Bim</th>
+        <th scope="col">4º Bim</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th scope="row">Bruna</th>
+        <td>8.5</td>
+        <td>7.0</td>
+        <td>9.0</td>
+        <td>8.0</td>
+        <td class="media-final">8.1</td>
+      </tr>
+      <tr>
+        <th scope="row">Joaquim Burro</th>
+        <td>6.0</td>
+        <td>5.5</td>
+        <td>7.0</td>
+        <td>6.5</td>
+        <td class="media-final">6.3</td>
+      </tr>
+      <tr>
+        <th scope="row">Joaquim Esperto</th>
+        <td>9.5</td>
+        <td>10.0</td>
+        <td>9.0</td>
+        <td>9.5</td>
+        <td class="media-final">9.5</td>
+      </tr>
+      <tr>
+        <th scope="row">Jair Inácio Bolsolula</th>
+        <td>5.0</td>
+        <td>4.0</td>
+        <td>6.0</td>
+        <td>5.5</td>
+        <td class="media-final">5.1</td>
+      </tr>
+      <tr>
+        <th scope="row">Pedro Ruan</th>
+        <td>7.5</td>
+        <td>8.0</td>
+        <td>8.5</td>
+        <td>9.0</td>
+        <td class="media-final">8.2</td>
+      </tr>
+      <tr>
+        <th scope="row">Gabriel Smith</th>
+        <td>8.0</td>
+        <td>7.5</td>
+        <td>7.0</td>
+        <td>8.0</td>
+        <td class="media-final">7.6</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <th scope="row">Média da Turma</th>
+        <td>7.4</td>
+        <td>7.0</td>
+        <td>7.7</td>
+        <td>7.7</td>
+        <td class="media-final">7.5</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+</html>

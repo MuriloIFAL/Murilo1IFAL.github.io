@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Recursos Multimídia — Cap. 4 / Ativ. 4</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(to bottom, #d5f5e3, #ffffff);
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      color: #2e4053;
+    }
+
+    main {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    figure {
+      background-color: white;
+      padding: 40px;
+      margin-bottom: 40px;
+      border: 1px solid #ccc;
+      max-width: 820px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    figcaption {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: #555;
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+      line-height: 1.4;
+    }
+
+    video, audio, iframe, img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Galeria de Recursos Multimídia Acadêmicos</h1>
+  </header>
+
+  <main>
+    <figure>
+      <video controls width="800" height="450" poster="https://peach.blender.org/wp-content/uploads/title_anid_progres.jpg" preload="metadata">
+        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+        <track kind="subtitles" src="legendas/aula-html.vtt" srclang="pt" label="Português" default>
+        <p>Seu navegador não suporta vídeos HTML5. <a href="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4">Baixe o vídeo aqui</a>.</p>
+      </video>
+      <figcaption>
+        <strong>Vídeo 1:</strong> Demonstração de player nativo utilizando o vídeo "For Bigger Fun". Fonte: Google Video Sample.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <audio controls preload="metadata">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        <p>Seu navegador não suporta áudio nativo. <a href="https://www.w3schools.com/html/horse.mp3">Baixe o áudio aqui</a>.</p>
+      </audio>
+      <figcaption>
+        <strong>Áudio 1:</strong> Exemplo de áudio embutido com controles nativos. <a href="transcricao.html">Acessar transcrição.</a>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <iframe 
+        width="800" 
+        height="450" 
+        src="https://www.youtube-nocookie.com/embed/S9uPNppGsGo" 
+        title="O que é HTML5?" 
+        loading="lazy" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+      <figcaption>
+        <strong>Vídeo Externo:</strong> Introdução ao HTML5 incorporada via Iframe do YouTube. Canal: Curso em Vídeo.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <picture>
+        <source media="(min-width: 768px)" srcset="https://via.placeholder.com/800x300/4CAF50/FFFFFF?text=Banner+Desktop">
+        <img src="https://via.placeholder.com/400x300/4CAF50/FFFFFF?text=Banner+Mobile" alt="Estudante programando" width="400" height="300">
+      </picture>
+      <figcaption>
+        <strong>Imagem Responsiva:</strong> Uso do elemento picture para adaptação de imagem conforme a largura da tela (Desktop vs Mobile).
+      </figcaption>
+    </figure>
+  </main>
+
+</body>
+</html>
