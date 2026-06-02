@@ -4,87 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição para a Convenção de Tecnologia de Alagoas!</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: linear-gradient(to bottom, #B5FFD9, #FFF2F9);
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-            margin: 0;
-        }
 
-        form {
-            background: #F2FFFF;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            width: 100%;
-            max-width: 650px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        h1 { text-align: center; color: #005927; margin-bottom: 5px; }
-        p.subtitulo { text-align: center; color: #666; margin-bottom: 20px; }
-
-        fieldset {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        legend { font-weight: bold; padding: 0 10px; color: #155724; }
-
-        .campo-grupo {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 15px;
-        }
-
-        label { font-weight: 600; margin-bottom: 5px; }
-
-        input[type="text"], input[type="email"], input[type="datetime-local"], select {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        small { color: #666; margin-top: 4px; display: block; }
-
-        button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 15px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-      .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #63FFAC;
-        color: #005927;
-        text-align: center;
-      }
-
-        button:hover { background-color: #218838; }
-
-        #valor-experiencia { color: #28a745; font-weight: bold; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
-        
+
         <input type="hidden" name="edicao" value="2026">
 
         <h1>Convenção de Tecnologia de Alagoas</h1>
@@ -92,7 +18,7 @@
 
         <fieldset>
             <legend>Identificação do Participante</legend>
-            
+
             <div class="campo-grupo">
                 <label for="nome">Nome Completo</label>
                 <input type="text" id="nome" name="nome" required>
@@ -106,6 +32,7 @@
             <div class="campo-grupo">
                 <label for="cidade">Cidade de Origem</label>
                 <input type="text" id="cidade" name="cidade" list="cidades-al">
+
                 <datalist id="cidades-al">
                     <option value="Maceió">
                     <option value="Marechal Deodoro">
@@ -120,8 +47,13 @@
 
             <div class="campo-grupo">
                 <label for="foto">Foto para crachá</label>
-                <input type="file" id="foto" name="foto" accept="image/jpeg,image/png" aria-describedby="foto-help">
-                <small id="foto-help">Formatos aceitos: JPG e PNG. Tamanho máximo: 2 MB.</small>
+                <input type="file" id="foto" name="foto"
+                    accept="image/jpeg,image/png"
+                    aria-describedby="foto-help">
+
+                <small id="foto-help">
+                    Formatos aceitos: JPG e PNG. Tamanho máximo: 2 MB.
+                </small>
             </div>
         </fieldset>
 
@@ -135,11 +67,18 @@
 
             <div class="campo-grupo">
                 <label for="experiencia">
-                    Nível de experiência em programação: <span id="valor-experiencia">5</span>/10
+                    Nível de experiência em programação:
+                    <span id="valor-experiencia">5</span>/10
                 </label>
-                <input type="range" id="experiencia" name="experiencia" 
-                       min="0" max="10" step="1" value="5"
-                       oninput="document.getElementById('valor-experiencia').textContent = this.value">
+
+                <input type="range"
+                    id="experiencia"
+                    name="experiencia"
+                    min="0"
+                    max="10"
+                    step="1"
+                    value="5"
+                    oninput="document.getElementById('valor-experiencia').textContent = this.value">
             </div>
 
             <div class="campo-grupo">
@@ -149,23 +88,30 @@
 
             <div class="campo-grupo">
                 <label for="oficinas">Áreas de Especialidade</label>
-                <select id="oficinas" name="oficinas[]" multiple size="4" aria-describedby="oficinas-help">
+
+                <select id="oficinas" name="oficinas[]" multiple size="4"
+                    aria-describedby="oficinas-help">
+
                     <option value="web">Desenvolvimento Web com React</option>
                     <option value="python">Data Science com Python</option>
                     <option value="iot">Introdução a IoT e Arduino</option>
                     <option value="seg">Cibersegurança Prática</option>
                     <option value="ux">Design de Interface (UX/UI)</option>
                 </select>
-                <small id="oficinas-help">Use Ctrl (ou Cmd no Mac) para selecionar mais de uma oficina.</small>
+
+                <small id="oficinas-help">
+                    Use Ctrl (ou Cmd no Mac) para selecionar mais de uma oficina.
+                </small>
             </div>
         </fieldset>
 
         <button type="submit">Confirmar inscrição</button>
+
     </form>
 
-<div class="footer">
-  <p><b>Feito por Murilo Marques & Emanuel Magno</b></p>
-</div>
+    <div class="footer">
+        <p><b>Feito por Murilo Marques & Emanuel Magno</b></p>
+    </div>
 
 </body>
 </html>
