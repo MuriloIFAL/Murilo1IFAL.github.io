@@ -1,266 +1,171 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Meu Currículo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição para a Convenção de Tecnologia de Alagoas!</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: linear-gradient(to bottom, #B5FFD9, #FFF2F9);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
 
-<link rel="icon" type="image/x-icon" href="foto/undertale.gif">
+        form {
+            background: #F2FFFF;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 650px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-<style>
-  body {
-    background: linear-gradient(#B3FFB3, #f3fff3);
-    text-align: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    min-height: 100vh;
-  }
+        h1 { text-align: center; color: #005927; margin-bottom: 5px; }
+        p.subtitulo { text-align: center; color: #666; margin-bottom: 20px; }
 
-  header {
-    padding: 10px;
-  }
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+        }
 
-  img.foto {
-    width: 250px;
-    height: 300px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10%;
-    border: 5px solid #17401D;
-  }
+        legend { font-weight: bold; padding: 0 10px; color: #155724; }
 
-  p.intro {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.6);
-    padding: 10px 15px;
-    border: 2px solid #17401D;
-    border-radius: 15px;
-  }
+        .campo-grupo {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
 
-  ul {
-    list-style: disc;
-    text-align: left;
-    margin: 20px auto;
-    width: fit-content;
-  }
+        label { font-weight: 600; margin-bottom: 5px; }
 
-  img.ifallogo {
-    max-width: 200px;
-    height: auto;
-    display: block;
-    margin: 100px auto;
-  }
+        input[type="text"], input[type="email"], input[type="datetime-local"], select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
 
-  .minha-arte {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 20px;
-    margin: 40px auto;
-    border: 2px solid #17401D;
-    border-radius: 20px;
-    max-width: 1000px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
+        small { color: #666; margin-top: 4px; display: block; }
 
-  .galeria-artes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-  .galeria-artes img {
-    width: 200px;
-    height: auto;
-    border-radius: 20px;
-    border: 2px solid #17401D;
-    box-shadow: 10px 4px 10px rgba(0,0,0,0.5));
-    transition: transform 0.2s;
-  }
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #63FFAC;
+        color: #005927;
+        text-align: center;
+      }
 
-  .galeria-artes img:hover {
-    transform: scale(1.05);
-  }
+        button:hover { background-color: #218838; }
 
-  .rodape {
-    background: #17401D;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-  }
-
-  .massa {
-    width: 308px;
-    height: 183px;
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .massa img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: opacity 0.3s, transform 0.1s;
-    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
-  }
-
-  #legenda {
-    margin-left: 10px;
-  }
-
-  .jogosfav {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 20px;
-    margin: 40px auto;
-    border: 2px solid #17401D;
-    border-radius: 20px;
-    max-width: 700px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-
-  .listajogos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .listajogos img {
-    width: 120px;
-    height: 120px;
-    border-radius: 20px;
-    border: 2px solid #17401D;
-    transition: transform 0.4s ease;
-  }
-
-  .listajogos img:hover {
-    transform: scale(1.5);
-    z-index: 10;
-  }
-</style>
+        #valor-experiencia { color: #28a745; font-weight: bold; }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Oi, eu sou o <b>Murilo</b>!</h1>
-  <img src="foto/foto.jpg" class="foto" alt="Minha foto">
-</header>
+    <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+        
+        <input type="hidden" name="edicao" value="2026">
 
-<p class="intro">
-  Meu nome é Murilo Marques Antunes, eu tenho 15 anos e sou do curso de <b>Desenvolvimento de Sistemas!</b>
-  <img id="spamton" src="https://media.tenor.com/mNAGAJmu9rcAAAAj/spamton-dance.gif" width="84" height="100" alt="Spamton Dançando">
-</p>
+        <h1>Convenção de Tecnologia de Alagoas</h1>
+        <p class="subtitulo">Formulário de Inscrição</p>
 
-<audio id="espanto" src="audio/spamton.mp3"></audio>
-<script>
-const spam = document.getElementById("spamton"); 
-const somspam = document.getElementById("espanto");
+        <fieldset>
+            <legend>Identificação do Participante</legend>
+            
+            <div class="campo-grupo">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
 
-spam.addEventListener("click", function () {
-  somspam.currentTime = 0;
-  somspam.play();
-});
-</script>
+            <div class="campo-grupo">
+                <label for="email">E-mail Profissional</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-<ul>
-  <li>Tentando aprender Python, Java e HTML</li>
-  <li>Artista digital</li>
-  <li>Sou de Brasília</li>
-  <li>Falo 4 idiomas</li>
-</ul>
+            <div class="campo-grupo">
+                <label for="cidade">Cidade de Origem</label>
+                <input type="text" id="cidade" name="cidade" list="cidades-al">
+                <datalist id="cidades-al">
+                    <option value="Maceió">
+                    <option value="Marechal Deodoro">
+                    <option value="Rio Largo">
+                    <option value="Arapiraca">
+                    <option value="Palmeira dos Índios">
+                    <option value="Penedo">
+                    <option value="Coruripe">
+                    <option value="Viçosa">
+                </datalist>
+            </div>
 
-<div class="minha-arte">
-  <h2>Minhas Artes</h2>
-  <div class="galeria-artes">
-    <img src="foto/browt.jpeg" alt="Arte Browt">
-    <img src="foto/morchuva.jpeg" alt="Arte de Foto de Perfil">
-    <img src="foto/sableye.jpeg" alt="Arte Sableye">
-    <img src="foto/litleo.jpeg" alt="Arte Litleo">
-  </div>
+            <div class="campo-grupo">
+                <label for="foto">Foto para crachá</label>
+                <input type="file" id="foto" name="foto" accept="image/jpeg,image/png" aria-describedby="foto-help">
+                <small id="foto-help">Formatos aceitos: JPG e PNG. Tamanho máximo: 2 MB.</small>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferências para o Evento</legend>
+
+            <div class="campo-grupo">
+                <label for="chegada">Data e hora preferida para chegada</label>
+                <input type="datetime-local" id="chegada" name="chegada">
+            </div>
+
+            <div class="campo-grupo">
+                <label for="experiencia">
+                    Nível de experiência em programação: <span id="valor-experiencia">5</span>/10
+                </label>
+                <input type="range" id="experiencia" name="experiencia" 
+                       min="0" max="10" step="1" value="5"
+                       oninput="document.getElementById('valor-experiencia').textContent = this.value">
+            </div>
+
+            <div class="campo-grupo">
+                <label for="cor_camiseta">Cor de preferência para a camiseta</label>
+                <input type="color" id="cor_camiseta" name="cor_camiseta" value="#1a73e8">
+            </div>
+
+            <div class="campo-grupo">
+                <label for="oficinas">Áreas de Especialidade</label>
+                <select id="oficinas" name="oficinas[]" multiple size="4" aria-describedby="oficinas-help">
+                    <option value="web">Desenvolvimento Web com React</option>
+                    <option value="python">Data Science com Python</option>
+                    <option value="iot">Introdução a IoT e Arduino</option>
+                    <option value="seg">Cibersegurança Prática</option>
+                    <option value="ux">Design de Interface (UX/UI)</option>
+                </select>
+                <small id="oficinas-help">Use Ctrl (ou Cmd no Mac) para selecionar mais de uma oficina.</small>
+            </div>
+        </fieldset>
+
+        <button type="submit">Confirmar inscrição</button>
+    </form>
+
+<div class="footer">
+  <p><b>Feito por Murilo Marques & Emanuel Magno</b></p>
 </div>
-
-<div class="jogosfav">
-  <h2>Meus jogos favoritos!</h2>
-
-  <div class="listajogos">
-    <img src="foto/coverdelta.jpg" data-audio="audio/sedeltarune.mp3" alt="DELTARUNE">
-
-    <img src="foto/covermario.jpg" data-audio="audio/semario.mp3" alt="Super Mario World">
-
-    <img src="foto/coversilk.jpg" data-audio="audio/sesilksong.mp3" alt="Hollow Knight: Silksong">
-
-    <img src="foto/covermetroid.jpg" data-audio="audio/semetroid.mp3" alt="Super Metroid">
-
-    <img src="foto/coverhades.jpg" data-audio="audio/sehades.mp3" alt="Hades II">
-
-    <img src="foto/coverrayman.jpg" data-audio="audio/serayman.mp3" alt="Rayman Origins">
-
-    <img src="foto/coverzelda.jpg" data-audio="audio/sezelda.mp3" alt="The Legend of Zelda: Breath of the Wild">
-
-    <img src="foto/coverpokemon.jpg" data-audio="audio/sepokemon.mp3" alt="Pokémon Black 2">
-
-    <img src="foto/coversmash.jpg" data-audio="audio/sesmashbros.mp3" alt="Super Smash Bros. Ultimate">
-
-    <img src="foto/coversonic.png" data-audio="audio/sesonic.mp3" data-volume="0" alt="Sonic Mania">
-  </div>
-</div>
-
-<script>
-  const imagens = document.querySelectorAll('.listajogos img');
-  let audioAtual = new Audio();
-
-  imagens.forEach(img => {
-    img.addEventListener('click', () => {
-      const src = img.getAttribute('data-audio');
-
-      audioAtual.pause();
-      audioAtual = new Audio(src);
-      audioAtual.play();
-    });
-  });
-</script>
-<div class="massa">
-  <img src="foto/mama.png" id="macarrao">
-  <p id="legenda">Pode vigiar meu macarrão pra mim?</p>
-  <audio id="somExplosao" src="audio/explode.mp3"></audio>
-  
-  <script>
-  const img = document.getElementById("macarrao");
-  const legenda = document.getElementById("legenda");
-  const som = document.getElementById("somExplosao");
-
-  img.addEventListener("click", function () {
-    som.currentTime = 0; 
-    som.play(); 
-
-    img.src = "foto/explode.gif?=" + Date.now();
-    legenda.textContent = "MEU DEUS DO CÉU!";
-
-    setTimeout(() => {
-      img.style.opacity = "0";
-      img.style.pointerEvents = "none";
-      legenda.textContent = "Precisava explodir minha comida mano?";
-    }, 1700);
-  });
-  </script>
-</div>
-
-<a href="https://www2.ifal.edu.br/" target="_blank">
-  <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ficonape.com%2Fwp-content%2Ffiles%2Fkj%2F119505%2Fpng%2FInstituto_Federal_de_Alagoas_-_Marca_Vertical_2015.png&f=1" class="ifallogo" alt="Olha minha escola aí">
-</a>
-
-<footer class="rodape">
-  <h3>Contato:</h3>
-  <ul>
-    <li>E-mail: mma4@aluno.ifal.edu.br</li>
-  </ul>
-  <h3>© 2026 Murilo Antunes</h3>
-</footer>
 
 </body>
 </html>
