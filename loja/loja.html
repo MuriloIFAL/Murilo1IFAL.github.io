@@ -14,7 +14,9 @@
 
   <style>
 
-    /*CORES*/
+    /* =========================
+       CORES
+       ========================= */
 
     :root {
       --color-1: #9AEFD1;
@@ -44,7 +46,9 @@
     }
 
 
-    /*BOTÕES*/
+    /* =========================
+       BOTÕES
+       ========================= */
 
     .btn-color-1 {
       background-color: var(--color-1);
@@ -77,7 +81,9 @@
     }
 
 
-    /*CARROSSEL*/
+    /* =========================
+       CARROSSEL
+       ========================= */
 
     .carousel-item {
       position: relative;
@@ -121,7 +127,9 @@
     }
 
 
-    /*CATEGORIAS*/
+    /* =========================
+       CATEGORIAS
+       ========================= */
 
     .category-card {
       transition: transform 0.2s;
@@ -132,7 +140,9 @@
     }
 
 
-    /*PRODUTOS*/
+    /* =========================
+       PRODUTOS
+       ========================= */
 
     .product-img {
       height: 220px;
@@ -143,7 +153,9 @@
     }
 
 
-    /*BANNERS DE BAIXO*/
+    /* =========================
+       BANNERS DE BAIXO
+       ========================= */
 
     .bottom-banner {
       width: 100%;
@@ -155,7 +167,9 @@
     }
 
 
-    /*TEXTO DOS BANNERS*/
+    /* =========================
+       TEXTO DOS BANNERS
+       ========================= */
 
     .banner-text {
       position: absolute;
@@ -181,7 +195,9 @@
     }
 
 
-    /*CELULAR*/
+    /* =========================
+       CELULAR
+       ========================= */
 
     @media (max-width: 576px) {
 
@@ -219,7 +235,9 @@
 <body>
 
 
-  <!--FRETE-->
+  <!-- =========================
+       FRETE
+       ========================= -->
 
   <div class="bg-color-1 text-center py-2">
 
@@ -231,7 +249,9 @@
 
 
 
-  <!-- NAVBAR -->
+  <!-- =========================
+       NAVBAR
+       ========================= -->
 
   <nav class="navbar navbar-expand-lg bg-color-2">
 
@@ -344,16 +364,17 @@
 
         <!-- CARRINHO -->
 
-        <button class="btn btn-dark">
+        <div class="dropdown">
+          <button type="button" class="btn btn-dark dropdown-toggle position-relative" data-bs-toggle="dropdown">
+            Carrinho
+            <span id="contador-carrinho" class="badge bg-color-3 text-bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+          </button>
 
-          Carrinho
+          <ul id="lista-carrinho" class="dropdown-menu dropdown-menu-end p-5">
+            <li id="carrinho-vazio" class="dropdown-item text-center">Carrinho Vazio</li>
+          </ul>
 
-          <span class="badge bg-color-3">
-            3
-          </span>
-
-        </button>
-
+        </div>
 
       </div>
 
@@ -367,7 +388,9 @@
 
 
 
-    <!--CARROSSEL-->
+    <!-- =========================
+         CARROSSEL
+         ========================= -->
 
     <div
       id="carouselLoja"
@@ -405,7 +428,9 @@
       <div class="carousel-inner rounded">
 
 
-        <!--BANNER NES-->
+        <!-- =========================
+             BANNER NES
+             ========================= -->
 
         <div class="carousel-item active">
 
@@ -432,7 +457,9 @@
 
 
 
-        <!--BANNER SNES -->
+        <!-- =========================
+             BANNER SNES
+             ========================= -->
 
         <div class="carousel-item">
 
@@ -459,7 +486,9 @@
 
 
 
-        <!-- BANNER GAME BOY-->
+        <!-- =========================
+             BANNER GAME BOY
+             ========================= -->
 
         <div class="carousel-item">
 
@@ -520,7 +549,9 @@
 
 
 
-    <!--CATEGORIAS -->
+    <!-- =========================
+         CATEGORIAS
+         ========================= -->
 
     <section class="my-5">
 
@@ -675,24 +706,17 @@
         <!-- PROMOÇÕES -->
 
         <div class="col">
-
           <div
             class="card category-card bg-color-2 text-center h-100">
-
             <div class="card-body">
-
               <h5 class="card-title">
                 Promoções
               </h5>
-
               <p class="card-text">
                 Produtos com preços especiais.
               </p>
-
             </div>
-
           </div>
-
         </div>
 
 
@@ -702,24 +726,21 @@
 
 
 
-    <!--PRODUTOS-->
+    <!-- =========================
+         PRODUTOS
+         ========================= -->
 
     <section class="my-5">
 
-
       <div
         class="d-flex justify-content-between align-items-center mb-4">
-
         <h2>
           Consoles Retrô
         </h2>
-
         <a
           href="#"
           class="btn btn-color-2">
-
           Ver todos
-
         </a>
 
       </div>
@@ -728,56 +749,43 @@
 
       <div
         class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-
-
         <!-- NES -->
-
         <div class="col">
-
           <div class="card h-100">
-
-            <img
-              src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nintendo-Entertainment-System-NES-Console-FL.jpg"
-              class="card-img-top product-img"
-              alt="Nintendo Entertainment System"
-            >
-
-
             <div class="card-body">
-
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nintendo-Entertainment-System-NES-Console-FL.jpg"
+                class="card-img-top product-img"
+                alt="Nintendo Entertainment System"
+              >
+              <span class="badge text-bg-danger position-absolute top-0 start-0">
+                Promoção
+              </span>
+            </div>
+            <div class="card-body">
               <h5 class="card-title">
                 Nintendo Entertainment System
               </h5>
-
               <p class="card-text">
                 Vem com a fita do Mario 3.
               </p>
-
               <p class="text-decoration-line-through text-muted">
                 R$ 799,00
               </p>
-
               <h4>
                 R$ 699,00
               </h4>
-
-              <span class="badge bg-color-3 mb-2">
-                Promoção
-              </span>
-
               <button
-                class="btn btn-color-2 w-100"
+                class="btn btn-color-2 w-100 adcionar-carrinho"
+                data-produto="Nintendo Entertainment System"
+                data-preco="699"
                 data-bs-toggle="modal"
-                data-bs-target="#produtoModal">
-
+                data-bs-target="#produtoModal"
+              >
                 Adicionar ao carrinho
-
               </button>
-
             </div>
-
           </div>
-
         </div>
 
 
@@ -785,43 +793,35 @@
         <!-- SNES -->
 
         <div class="col">
-
           <div class="card h-100">
-
-            <img
-              src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nintendo-Super-NES-Console-FL.jpg"
-              class="card-img-top product-img"
-              alt="Super Nintendo"
-            >
-
-
             <div class="card-body">
-
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nintendo-Super-NES-Console-FL.jpg"
+                class="card-img-top product-img"
+                alt="Super Nintendo"
+              >
+            </div>
+            <div class="card-body">
               <h5 class="card-title">
                 Super Nintendo
               </h5>
-
               <p class="card-text">
                 Grande clássico, em ótimo estado, 2 fitas.
               </p>
-
               <h4>
                 R$ 699,00
               </h4>
-
               <button
-                class="btn btn-color-2 w-100"
+                class="btn btn-color-2 w-100 adcionar-carrinho"
+                data-produto="Super Nintendo"
+                data-preco="699"
                 data-bs-toggle="modal"
-                data-bs-target="#produtoModal">
-
+                data-bs-target="#produtoModal"
+              >
                 Adicionar ao carrinho
-
               </button>
-
             </div>
-
           </div>
-
         </div>
 
 
@@ -829,16 +829,17 @@
         <!-- GAME BOY -->
 
         <div class="col">
-
           <div class="card h-100">
-
-            <img
-              src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Game-Boy-FL.jpg"
-              class="card-img-top product-img"
-              alt="Nintendo Game Boy"
-            >
-
-
+            <div class="card-body">
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Game-Boy-FL.jpg"
+                class="card-img-top product-img"
+                alt="Nintendo Game Boy"
+              >
+              <span class="badge text-bg-danger position-absolute top-0 start-0">
+                Promoção
+              </span>
+            </div>
             <div class="card-body">
 
               <h5 class="card-title">
@@ -857,12 +858,10 @@
                 R$ 599,00
               </h4>
 
-              <span class="badge bg-color-3 mb-2">
-                Promoção
-              </span>
-
               <button
-                class="btn btn-color-2 w-100"
+                class="btn btn-color-2 w-100 adcionar-carrinho"
+                data-produto="Game Boy"
+                data-preco="599"
                 data-bs-toggle="modal"
                 data-bs-target="#produtoModal">
 
@@ -881,8 +880,8 @@
         <!-- PS2 -->
 
         <div class="col">
-
           <div class="card h-100">
+            <div class=""></div>
 
             <img
               src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sony-PlayStation-2-90001-Console-BR.jpg"
@@ -914,7 +913,9 @@
               </span>
 
               <button
-                class="btn btn-color-2 w-100"
+                class="btn btn-color-2 w-100 adcionar-carrinho"
+                data-produto="PlayStation 2"
+                data-preco="299"
                 data-bs-toggle="modal"
                 data-bs-target="#produtoModal">
 
@@ -935,7 +936,9 @@
 
 
 
-    <!--BANNERS DE BAIXO-->
+    <!-- =========================
+         BANNERS DE BAIXO
+         ========================= -->
 
     <div class="row g-4 my-5">
 
@@ -1005,7 +1008,9 @@
 
 
 
-    <!--BENEFÍCIOS-->
+    <!-- =========================
+         BENEFÍCIOS
+         ========================= -->
 
     <section class="bg-color-4 rounded p-5 my-5">
 
@@ -1057,7 +1062,9 @@
 
 
 
-    <!--NEWSLETTER-->
+    <!-- =========================
+         NEWSLETTER
+         ========================= -->
 
     <section class="text-center my-5">
 
@@ -1077,7 +1084,7 @@
           <input
             type="email"
             class="form-control"
-            placeholder="Seu melhor e-mail"
+            placeholder="Seu e-mail"
           >
 
         </div>
@@ -1104,7 +1111,9 @@
 
 
 
-  <!--RODAPÉ -->
+  <!-- =========================
+       RODAPÉ
+       ========================= -->
 
   <footer class="bg-color-2 py-5 mt-5">
 
@@ -1198,7 +1207,9 @@
 </footer>
 
 
-<!--MODAL DO CARRINHO-->
+<!-- =========================
+     MODAL DO CARRINHO
+     ========================= -->
 
 <div
   class="modal fade"
@@ -1256,6 +1267,58 @@
 <!-- BOOTSTRAP JAVASCRIPT -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let carrinho = [];
+  let botoes = document.querySelectorAll(".adcionar-carrinho");
+  let contador = document.querySelector("#contador-carrinho");
+  let lista = document.querySelector("#lista-carrinho");
+
+  botoes.forEach(botao => {
+    botao.addEventListener("click", () => {
+      let produto = botao.dataset.produto;
+      let preco = parseFloat(botao.dataset.preco);
+      let item = carrinho.find(item => item.produto === produto);
+      if (item) {
+        item.quantidade++;
+      } else {
+        carrinho.push({
+          produto:produto,
+          preco:preco,
+          quantidade:1
+
+        });
+      }
+      atualizarCarrinho();
+    });
+  });
+   
+   function atualizarCarrinho() {
+    lista.innerHTML = "";
+    if (carrinho.length === 0) {
+      lista.innerHTML = `
+        <li class="dropdown-item text-center">
+          Carrinho Vazio
+        </li>`;
+        contador.textContent = "0";
+        return;
+    }
+    let quantidadeTotal = 0;
+    carrinho.forEach(item => {
+      quantidadeTotal += item.quantidade;
+      lista.innerHTML += `
+        <li>
+          <div class="dropdown-item">
+            <strong>${item.produto}</strong>
+            <br>
+            <small>
+              ${item.quantidade}x - R$ ${item.preco.toFixed(2).replace(".",",")}
+            </small>
+          </div>
+        </li>`;       
+    });
+    contador.textContent = quantidadeTotal;
+   }
+</script>
 
 </body>
 </html>
