@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(to right, #6996FF, #99DAFF, #9CFFDF);
@@ -14,11 +18,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    padding: 20px 15px;
     margin: 0 auto;
 }
 
 h1 {
+    margin-top: 0;
     margin-bottom: 5px;
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
 }
 
 #placar {
@@ -28,18 +36,19 @@ h1 {
 
 .tabuleiro {
     display: grid;
-    grid-template-columns: repeat(4, 90px);
-    gap: 12px;
-    justify-content: center;
-    width: 75%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
     margin: 0 auto 1.5rem auto;
 }
 
 .carta {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     perspective: 1000px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .carta-inner {
@@ -63,7 +72,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 6vw, 2rem);
     border-radius: 6px;
     user-select: none;
 }
@@ -80,12 +89,22 @@ h1 {
     transform: rotateY(180deg);
 }
 
+.frente img {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+}
+
 #btn-reiniciar {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
     background-color: #FFF27D;
     transition: background-color 0.5s ease, transform 0.5s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #btn-reiniciar:hover {
@@ -93,12 +112,15 @@ h1 {
     transform: scale(1.05);
 }
 
+#btn-reiniciar:active {
+    transform: scale(0.98);
+}
+
 footer {
     background-color: #003452;
     color: white;
     text-align: center;
-    margin: auto;
     padding: 15px;
     width: 100%;
-    margin-top: 40px;
+    margin-top: auto;
 }
