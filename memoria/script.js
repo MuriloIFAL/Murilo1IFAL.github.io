@@ -2,7 +2,7 @@ const tabuleiro = document.getElementById('tabuleiro');
 const placarTop = document.getElementById('placar');
 const reiniciar = document.getElementById('btn-reiniciar');
 
-const itens = ['♥︎', '✦', '♪', '✿'];
+const itens = ['♥︎', '✦', '♪', '✿', '♛', '☻', '❆', '☎'];
 
 let cartas = [];
 let primeiraCarta = null;
@@ -20,7 +20,7 @@ function iniciarJogo() {
   travar = false;
   atualizarPlacar();
 
-  cartas = ['♥︎', '✦', '♪', '✿', '♥︎', '✦', '♪', '✿'].sort(() => Math.random() - 0.5);
+  cartas = ['♥︎', '✦', '♪', '✿', '♛', '☻', '❆', '☎', '♥︎', '✦', '♪', '✿', '♛', '☻', '❆', '☎'].sort(() => Math.random() - 0.5);
 
   cartas.forEach((item) => {
     const carta = document.createElement('div');
