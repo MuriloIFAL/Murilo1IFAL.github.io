@@ -85,6 +85,12 @@ h1 {
     font-size: 1rem;
     cursor: pointer;
     background-color: #FFF27D;
+    transition-duration: 0.5s ease;
+}
+
+#btn-reiniciar:hover {
+    background-color:#C79E00;
+    transform: translate(0px, 5px);
 }
 
 footer {
