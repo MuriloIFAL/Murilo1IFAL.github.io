@@ -90,7 +90,7 @@ h1 {
 
 #btn-reiniciar:hover {
     background-color: #C79E00;
-    transform: translate(0px, 5px);
+    transform: scale(1.05);
 }
 
 footer {
