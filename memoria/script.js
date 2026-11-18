@@ -68,7 +68,19 @@ function verificarPar() {
     limparTurno();
 
     if (paresEncontrados === itens.length) {
-      setTimeout(() => alert(`Você venceu o jogo em ${tentativas} tentativas!!!!!!!!!!!!`), 300);
+      travar = true;
+
+      setTimeout(() => {
+        alert(`Você venceu o jogo em ${tentativas} tentativas!!!!!!!!!!!!`);
+
+        document.querySelectorAll('.carta').forEach((carta) => {
+          carta.classList.remove('virada', 'correta');
+        });
+
+        setTimeout(() => {
+          iniciarJogo();
+        }, 600);
+      }, 300);
     }
   } else {
     travar = true;
@@ -93,3 +105,4 @@ function atualizarPlacar() {
 reiniciar.addEventListener('click', iniciarJogo);
 
 iniciarJogo();
+
