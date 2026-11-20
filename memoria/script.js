@@ -20,8 +20,7 @@ function iniciarJogo() {
   travar = false;
   atualizarPlacar();
 
-  cartas = ['♥︎', '✦', '♪', '✿', '♛', '☻', '❆', '☎', '♥︎', '✦', '♪', '✿', '♛', '☻', '❆', '☎'].sort(() => Math.random() - 0.5);
-
+  cartas = [...itens, ...itens].sort(() => Math.random() - 0.5);,
   cartas.forEach((item) => {
     const carta = document.createElement('div');
     carta.classList.add('carta');
