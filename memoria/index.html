@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-
-        <link rel="preconnect" href="https://googleapis.com">
-        <link rel="preconnect" href="https://gstatic.com" crossorigin>
-        <link href="https://googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Jogo da Memória</title>
@@ -13,16 +12,23 @@
     <body>
         <div class="container">
             <h1>Jogo da Memória</h1>
-            <p>Para aula do <a href= "http://lattes.cnpq.br/5033020411757389" target="_blank"
+            <p>Para aula do <a href="http://lattes.cnpq.br/5033020411757389" target="_blank"
                                 title="Perfil do Professor Kenji">Prof. Kenji Kamei</a></p>
+
+            <div class="modos" role="group" aria-label="Nível de dificuldade">
+                <button type="button" class="btn-modo" data-modo="facil">Fácil</button>
+                <button type="button" class="btn-modo ativo" data-modo="normal">Normal</button>
+                <button type="button" class="btn-modo" data-modo="dificil">Difícil</button>
+            </div>
+
             <div id="placar">Tentativas: 0</div>
 
             <div id="tabuleiro" class="tabuleiro"></div>
 
-            <button id="btn-reiniciar"> Reiniciar Jogo</button>
+            <button type="button" id="btn-reiniciar">Reiniciar Jogo</button>
         </div>
 
-        <script src="script.js"></script> 
+        <script src="script.js"></script>
 
         <footer>
             <div class="footer">
@@ -31,4 +37,3 @@
         </footer>
     </body>
 </html>
-
