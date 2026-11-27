@@ -25,7 +25,7 @@ const MODOS = {
   },
   dificil: {
     colunas: 5,
-    pares: 13,
+    pares: 10,
     bgGradient: 'linear-gradient(to right, #F87171, #FCA5A5, #FECACA)',
     versoBg: '#7f1d1d',
     frenteBorder: '#991b1b'
