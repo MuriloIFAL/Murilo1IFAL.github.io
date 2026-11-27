@@ -1,9 +1,40 @@
 const tabuleiro = document.getElementById('tabuleiro');
 const placarTop = document.getElementById('placar');
 const reiniciar = document.getElementById('btn-reiniciar');
+const botoesModo = document.querySelectorAll('.btn-modo');
 
-const itens = ['♥︎', '✦', '♪', '✿', '♛', '☻', '❆', '☎'];
+const ITENS = [
+  '♥︎', '✦', '♪', '✿', '♛', '☻', '❆', '☎',
+  '❖', '☀', '☾', '⚑', 'ϟ', '☘', '⚔', '♫'
+];
 
+const MODOS = {
+  facil: {
+    colunas: 5,
+    pares: 5,
+    bgGradient: 'linear-gradient(to right, #4ADE80, #86EFAC, #BBF7D0)',
+    versoBg: '#14532d',
+    frenteBorder: '#166534'
+  },
+  normal: {
+    colunas: 4,
+    pares: 8,
+    bgGradient: 'linear-gradient(to right, #6996FF, #99DAFF, #9CFFDF)',
+    versoBg: '#1e3a8a',
+    frenteBorder: '#1e40af'
+  },
+  dificil: {
+    colunas: 5,
+    pares: 13,
+    bgGradient: 'linear-gradient(to right, #F87171, #FCA5A5, #FECACA)',
+    versoBg: '#7f1d1d',
+    frenteBorder: '#991b1b'
+  }
+};
+
+const MODO_PADRAO = 'normal';
+
+let modoAtual = MODO_PADRAO;
 let cartas = [];
 let primeiraCarta = null;
 let segundaCarta = null;
@@ -11,7 +42,26 @@ let travar = false;
 let tentativas = 0;
 let paresEncontrados = 0;
 
-function iniciarJogo() {
+function aplicarTemaModo(modoKey) {
+  const config = MODOS[modoKey] || MODOS[MODO_PADRAO];
+  const rootStyle = document.documentElement.style;
+
+  rootStyle.setProperty('--bg-gradient', config.bgGradient);
+  rootStyle.setProperty('--verso-bg', config.versoBg);
+  rootStyle.setProperty('--frente-border', config.frenteBorder);
+  rootStyle.setProperty('--colunas', config.colunas);
+
+  botoesModo.forEach((btn) => {
+    btn.classList.toggle('ativo', btn.dataset.modo === modoKey);
+  });
+}
+
+function iniciarJogo(novoModo = modoAtual) {
+  modoAtual = MODOS[novoModo] ? novoModo : MODO_PADRAO;
+  const config = MODOS[modoAtual];
+
+  aplicarTemaModo(modoAtual);
+
   tabuleiro.innerHTML = '';
   tentativas = 0;
   paresEncontrados = 0;
@@ -20,7 +70,9 @@ function iniciarJogo() {
   travar = false;
   atualizarPlacar();
 
-  cartas = ['♥︎', '✦', '♪', '✿', '♛', '☻', '❆', '☎', '♥︎', '✦', '♪', '✿', '♛', '☻', '❆', '☎' ].sort(() => Math.random() - 0.5);
+  const selecionados = ITENS.slice(0, config.pares);
+  cartas = [...selecionados, ...selecionados].sort(() => Math.random() - 0.5);
+
   cartas.forEach((item) => {
     const carta = document.createElement('div');
     carta.classList.add('carta');
@@ -66,7 +118,7 @@ function verificarPar() {
     paresEncontrados++;
     limparTurno();
 
-    if (paresEncontrados === itens.length) {
+    if (paresEncontrados === MODOS[modoAtual].pares) {
       travar = true;
 
       setTimeout(() => {
@@ -101,7 +153,10 @@ function atualizarPlacar() {
   placarTop.textContent = `Tentativas: ${tentativas}`;
 }
 
-reiniciar.addEventListener('click', iniciarJogo);
+botoesModo.forEach((btn) => {
+  btn.addEventListener('click', () => iniciarJogo(btn.dataset.modo));
+});
 
-iniciarJogo();
+reiniciar.addEventListener('click', () => iniciarJogo());
 
+iniciarJogo(MODO_PADRAO);
